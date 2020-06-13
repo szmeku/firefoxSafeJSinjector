@@ -6,28 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/options.js"></script>
-    <script>
-       function codeForm(){
-          return document.querySelector("#code");
-       }
-
-       function saveCode(){
-            browser.storage.sync.set({code: codeForm().value}, () => alert('code saved!');
-       }
-    </script>
 </head>
 
 <body>
+    Javascript to inject on every page: <textarea id="codeForm" cols="30" rows="10"></textarea>
 
-    <textarea id="code" cols="30" rows="10"></textarea>
-
-    <button onclick="saveCode()">Save</button>
-
-    <script>
-        browser.storage.sync.get({code: ''}, response =>{
-            codeForm().value = response.code;
-        })
-    </script>
-
+    <button id="saveButton">Save</button>
 </body>
 </html>

@@ -17,9 +17,6 @@
             "16": "assets/icon16.png"
         }
     },
-    "background": {
-        "scripts": ["bg.js"]
-    },
     "applications": {
         "gecko": {
             "id": "@safejsinject",
@@ -34,6 +31,6 @@
     "content_scripts": [{
         "matches": ["*://*/*"],
         "run_at": "document_end",
-        "js": ["content.js"]
+        "js": ["js/content.js"]
     }]
 }
