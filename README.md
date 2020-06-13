@@ -1,1 +1,1 @@
-#Firefox Safe JS Injector
+# Firefox Safe JS Injector
