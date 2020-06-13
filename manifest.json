@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name": "Safe JS Injector",
+    "description": "Small extension for injecting custom js to every website",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "assets/icon16.png"
+        }
+    },
+    "background": {
+        "scripts": ["bg.js"]
+    },
+    "applications": {
+        "gecko": {
+            "id": "@safejsinject",
+            "strict_min_version": "57.0"
+        }
+    },
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true,
+        "open_in_tab": true
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "run_at": "document_end",
+        "js": ["content.js"]
+    }]
+}
